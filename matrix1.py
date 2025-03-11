@@ -12,7 +12,10 @@ import plotly.graph_objects as go
 from vanna.chromadb import ChromaDB_VectorStore
 from vanna.openai import OpenAI_Chat
 import asyncio
- 
+
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
  
 class AthenaAgent(Workflow):
     def __init__(self,vn, timeout: Optional[float] = 200.0):
