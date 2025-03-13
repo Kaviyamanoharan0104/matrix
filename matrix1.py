@@ -69,7 +69,7 @@ class AthenaAgent(Workflow):
         schema_query = """
         SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE, IS_NULLABLE, COLUMN_DEFAULT
         FROM INFORMATION_SCHEMA.COLUMNS
-        WHERE TABLE_NAME IN ('outputfilevm', 'outputfilevmdisk')
+        WHERE TABLE_NAME IN ('active_clients', 'inactive_clients')
         """
         df_schema = self.run_query(schema_query)
        
